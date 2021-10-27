@@ -18,13 +18,13 @@ const fetchRequest = function(callback) {
       callback(currentObject);
    }).catch(e => {
       console.log(e)
-      outputHTML = `<p class="descriptionText">This museum item does not exist! Press the button below to try again.</p>`;
+      outputHTML = `<p class="description-text">This museum item does not exist! Press the button below to try again.</p>`;
   document.querySelector(".item").innerHTML = outputHTML;
    });
 }
 const objectToHTML = function(currentObject) {
    outputHTML = `<img src="${currentObject.primaryImageSmall}" alt="${currentObject.title}" class="img">
-   <p class="descriptionText">${currentObject.title}</p>`;
+   <p class="description-text">${currentObject.title}</p>`;
   document.querySelector(".item").innerHTML = outputHTML;
 }
 
@@ -32,7 +32,7 @@ const newItem= function() {
    fetchRequest(objectToHTML);
 }
 
-document.getElementById("btn").addEventListener("click", newItem);
+document.querySelector(".btn").addEventListener("click", newItem);
 
 
 
